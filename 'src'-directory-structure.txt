@@ -1,0 +1,51 @@
+xbox-project-helix-2027/
+├── kernel_microvisor/                    # RUST: The Bare-Metal Xbox Hypervisor
+│   ├── src/
+│   │   ├── memory/
+│   │   │   ├── resilient_allocator.rs    # "Memory Crisis" dynamic RAM/VRAM pooling
+│   │   │   └── direct_storage_v2.rs      # Next-gen asset decompression logic
+│   │   ├── cpu_scheduler/
+│   │   │   ├── zen6_dispatcher.rs        # Asymmetric core scheduling for AMD Zen 6
+│   │   │   └── pc_mode_toggle.rs         # Hot-swapping thread priorities (PC vs Console)
+│   │   └── main.rs                       # Kernel entry point
+│   └── Cargo.toml                        # Rust package manager
+├── graphics_fsr_diamond/                 # C++ & HLSL: The RDNA 5 / AI Graphics Layer
+│   ├── src/
+│   │   ├── ai_upscaling/
+│   │   │   ├── DiamondFrameGen.cpp       # Neural frame generation orchestrator
+│   │   │   └── TensorAccelerator.cpp     # Dedicated NPU (Neural Processing Unit) hooks
+│   │   ├── rendering/
+│   │   │   ├── MicroPolygonEngine.cpp    # Nanite-style infinite detail pipeline
+│   │   │   └── RayTracingCore.cpp        # Hardware-accelerated path tracing dispatcher
+│   │   ├── shaders/
+│   │   │   ├── fsr_diamond_pass.hlsl     # GPU Compute Shader for AI frame generation
+│   │   │   └── memory_culling.hlsl       # GPU Compute Shader for removing unseen geometry
+│   │   └── CMakeLists.txt
+├── win_helix_bridge/                     # C/C++: Native PC Game Translation Layer
+│   ├── src/
+│   │   ├── api_intercept/
+│   │   │   ├── Direct3D12_Hook.cpp       # Intercepts standard PC DX12 calls
+│   │   │   └── Win32_Shim.c              # Fools PC games into thinking they are on standard Windows
+│   │   ├── input_mapping/
+│   │   │   └── SeamlessControllerMap.cpp # Instant translation between KB/M and Controller APIs
+│   │   └── bridge_core.cpp
+│   └── Makefile
+├── helix_dashboard_shell/                # C# / XAML (WinUI 3): The Seamless Frontend
+│   ├── Views/
+│   │   ├── BootSequence.xaml             # The startup animation and profile load
+│   │   ├── UnifiedStorefront.xaml        # Combined PC & Xbox storefront UI
+│   │   └── QuickResumeOverlay.xaml       # UI for swapping between PC and Console games instantly
+│   ├── ViewModels/
+│   │   ├── ShellStateManager.cs          # State machine managing UI transitions
+│   │   └── TelemetrySync.cs              # Communicates with the Rust kernel
+│   ├── HelixShell.csproj
+│   └── App.xaml.cs
+├── docs/                                 # Extensive Technical Documentation
+│   ├── architecture_zen6_rdna5.md
+│   ├── memory_crisis_mitigation.md
+│   └── fsr_diamond_whitepaper.md
+├── scripts/
+│   ├── build_all.ps1                     # PowerShell master build script
+│   └── deploy_to_dev_kit.ps1             # PowerShell script to push to hardware
+├── .gitignore
+└── README.md                             # Project Helix Manifesto

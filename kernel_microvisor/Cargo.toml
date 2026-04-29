@@ -1,0 +1,25 @@
+[package]
+name = "helix_microvisor"
+version = "0.1.0"
+edition = "2024"
+authors = ["Project Helix Architecture Team", "Microsoft"]
+description = "Bare-metal hypervisor for Xbox Project Helix (Zen 6 / RDNA 5)"
+
+# We do not want the standard library. We are building the foundation.
+[dependencies]
+spin = "0.9.8"            # Hardware-level spinlocks (Mutexes without an OS)
+x86_64 = "0.14.10"        # Direct manipulation of CPU registers and interrupts
+uart_16550 = "0.2.0"      # Serial port communication for our kernel telemetry output
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+
+# The Dev profile is strict to catch memory leaks early
+[profile.dev]
+panic = "abort"
+opt-level = 1
+
+# The Release profile is aggressively optimized for the 2027 Holiday launch
+[profile.release]
+panic = "abort"           # Do not unwind on crash, halt the silicon immediately
+opt-level = 3             # Maximum execution speed
+lto = true                # Link Time Optimization for binary size reduction
+codegen-units = 1         # Compile as a single unit for maximum LLVM optimization

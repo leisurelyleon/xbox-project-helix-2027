@@ -1,0 +1,63 @@
+# ==========================================
+# OS & Environment
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.env
+.env.local
+
+# ==========================================
+# Rust / Cargo (Microvisor)
+# ==========================================
+kernel_microvisor/target/
+**/*.rs.bk
+Cargo.lock
+
+# ==========================================
+# C++ & HLSL (FSR Diamond Graphics)
+# ==========================================
+graphics_fsr_diamond/build/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+*.o
+*.obj
+# Note: We keep the source .hlsl, but ignore the compiled DXIL if generated locally
+graphics_fsr_diamond/build/compiled_shaders/*.dxil 
+
+# ==========================================
+# C / C++ Make (WinHelix Bridge)
+# ==========================================
+win_helix_bridge/bin/
+win_helix_bridge/src/**/*.o
+*.dll
+*.exe
+*.so
+
+# ==========================================
+# C# / .NET / WinUI 3 (Dashboard Shell)
+# ==========================================
+helix_dashboard_shell/bin/
+helix_dashboard_shell/obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.[Cc]ache
+# Native AOT compiler artifacts
+helix_dashboard_shell/**/publish/
+
+# ==========================================
+# Deployment / Hardware Scripts
+# ==========================================
+# Ignore the temporary payload folder created by the PowerShell deployment script
+Payload_Temp/
+*.ps1_backup

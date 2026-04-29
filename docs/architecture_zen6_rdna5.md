@@ -34,4 +34,4 @@ graph TD
 
 ## RDNA 5 and the Dedicated XDNA NPU
 
-Traditionally, AI upscaling (like DLSS or FSR 2) consumed valuable compute cycles on the GPU's main shader cores. RDNA 5 introduces a dedicated **XDNA Neural Tensor Unit**. The main GPU rasterizes the game at 1080p, and the NPU asynchronously upscales it to 4K/120fps using the ```DiamondGrameGen``` orchestrator without costing a single frame of standard GPU performance.
+Traditionally, AI upscaling (like DLSS or FSR 2) consumed valuable compute cycles on the GPU's main shader cores. RDNA 5 introduces a dedicated **XDNA Neural Tensor Unit**. The main GPU rasterizes the game at 1080p, and the NPU asynchronously upscales it to 4K/120fps using the ```DiamondFrameGen``` orchestrator without costing a single frame of standard GPU performance.

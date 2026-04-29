@@ -1,4 +1,4 @@
-# 🧬 Xbox Project Helix (2027) – Hybrid Console & Windows 12 Architecture'
+# 🧬 Xbox Project Helix (2027) – Hybrid Console & Windows 12 Architecture
 
 ![Xbox Project Helix](https://techraptor.net/sites/default/files/styles/1920_1080/public/2026-03/xbox-project-helix-new-console-header.jpg?itok=ZNWMJJRI)
 
